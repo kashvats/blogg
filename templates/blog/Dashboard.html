@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% block content1 %}
+<div class="container mx-4 my-4">
+<a class="btn btn-primary" href="{% url 'add_post' %}">Add post</a></div>
+{% for a in ak %}
+<div class="container  my-3 rounded-lg">
+<div class="card">
+  <div class="card-header text-center">
+  </div>
+  <div class="card-body text-center">
+    <h5 class="card-title">{{a.heading}}</h5>
+    <p class="card-text">{{a.content|truncatechars:150}}</p>
+    <a class="btn btn-primary" href="{% url 'show' a.id %}">view</a>
+    <a class="btn btn-primary" href="{% url 'edit' a.id %}"> edit</a>
+    <a class="btn btn-danger" href="{% url 'delete' a.id %}"> delete</a>
+  </div></div>
+</div>
+{% endfor %}
+
+{% endblock %}

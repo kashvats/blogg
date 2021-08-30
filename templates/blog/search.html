@@ -1,0 +1,17 @@
+{% extends 'base.html' %}{% block content1 %}
+<div class="container">
+<h3 class="text-center my-2">you searched for </h3><h6 class="text-center" >{{gk}}</h6>
+{% for a in pk %}
+<div class="card my-4">
+  <div class="card-header">
+  <div class="card-body">
+      <h5 class="card-title"><a href="{% url 'show' a.id %}">{{a.heading}}</a></h5>
+    <p class="card-text">{{a.content|truncatechars:200}}<a class="btn txt-light" href="{% url 'show' a.id %}">..............view more</a></p>
+
+    <h6>written by
+      <a class="btn" href="{% url 'ghost' a.author %}">{{a.author}}</a></h6>
+    <p>at {{a.date}}</p>
+  </div></div>
+</div></div>
+  {% endfor %}
+  {% endblock %}
