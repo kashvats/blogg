@@ -9,7 +9,7 @@
         {% endfor %}{% endif %}
     </div>
 <form class="row gy-2 gx-3 align-items-center" method="POST">{% csrf_token %}
-<div class="mx-auto" style="width: 500px">
+<div class="mx-auto" style="width: responsive">
 {{bk|crispy}}
 <br><button type="submit" class="btn btn-outline-success row-6" value="submit">Sign-up</button>
 <a href="{% url 'login' %}" class="btn btn-outline-success col-6">log-in</a>
