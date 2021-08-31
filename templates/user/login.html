@@ -8,7 +8,6 @@
         <span {% if a.tags %} class="{{a.tags}}" {% endif %}>{{a}}</span></div>
     {% endfor %}{% endif %}
 </div>
-<div class="col-6">
 <form action="{% url 'login' %}" class="row gy-2 gx-3 align-items-center py-5 px-3" method="POST">{% csrf_token %}
     <div class="mx-auto col-6" style="width: responsive">
         {{rm|crispy}}
@@ -19,6 +18,6 @@
 
     </div>
 </form>
-    </div>
+
 {% endif %}
 {% endblock %}
