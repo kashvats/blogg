@@ -9,7 +9,7 @@
     {% endfor %}{% endif %}
 </div>
 <div class="col-6">
-<form action="{% url 'login' %}" class="row gy-2 gx-3 align-items-center my-4 py-4" method="POST">{% csrf_token %}
+<form action="{% url 'login' %}" class="row gy-2 gx-3 align-items-center" method="POST">{% csrf_token %}
     <div class="mx-auto" style="width: responsive">
         {{rm|crispy}}
         <br>
