@@ -5,7 +5,7 @@
   <div class="card-body"><br><br>
     <h2 class="card-title">{{a.heading}}</h2>
     <h6 class="card-subtitle mb-2 text-muted">written by {{a.author}} at {{a.date}}</h6><br><br>
-    <img src="{{a.Image.url}}">
+    <img src="{{a.Image.url}}" class="rounded-lg">
       <p class="card-text">{{a.content|linebreaks}}</p>
   </div>
 </div></div>
@@ -21,7 +21,7 @@
     {% endif %}{% endblock %}
 {% block content3 %}
 {% for a in kl %}{% load static %}
-<div class="container my-2 py-5">
+<div class="container py-5">
 <div class="card rounded-3 my-2">
   <div class="card-header"><div class="row">
 <div class="col-1" >
