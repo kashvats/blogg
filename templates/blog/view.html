@@ -10,16 +10,15 @@
   </div>
 </div></div>
 {% endblock %}
-{% block content2 %}<div class="container my-2 py-2">
+{% block content2 %}<div class="container my-2 py-5">
 {% if user.is_authenticated %}
 <br><br><form action=""  method="POST">{% csrf_token %}
 {% for p in pk %}
     {{p}}
     {% endfor %}
 <button type="submit">comment</button>
-</form></div>
-    {% endif %}{% endblock %}
-{% block content3 %}
+</form>
+    {% endif %}
 {% for a in kl %}{% load static %}
 <div class="container py-3">
 <div class="card rounded-3 my-2">
@@ -32,6 +31,6 @@
       <div class="col-5">
     <p class="card-text fs-5">{{a.txt}}</p></div>
   </div></div>
-</div></div>
+</div></div></div>
 {% endfor %}
 {% endblock %}
