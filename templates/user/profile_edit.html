@@ -1,7 +1,7 @@
 {% extends 'base.html' %}{% load crispy_forms_tags %}{% block content1 %}{% for a in jk %}
 {{a.img}}
 {% endfor %}
-<form class="row gy-2 gx-3 align-items-center" method="POST" enctype="multipart/form-data">{% csrf_token %}<div class="mx-auto" style="width: responsive">
+<form class="row gy-2 gx-3 align-items-center" method="POST" enctype="multipart/form-data">{% csrf_token %}<div class="mx-auto col-6" style="width: responsive">
     {{ak|crispy}}
     <button type="submit">update</button></div>
 </form>

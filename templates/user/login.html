@@ -10,7 +10,7 @@
 </div>
 <div class="col-6">
 <form action="{% url 'login' %}" class="row gy-2 gx-3 align-items-center" method="POST">{% csrf_token %}
-    <div class="mx-auto" style="width: responsive">
+    <div class="mx-auto col-6" style="width: responsive">
         {{rm|crispy}}
         <br>
         <button type="submit" class="btn btn-outline-success row-6" value="submit">Log-in</button>
