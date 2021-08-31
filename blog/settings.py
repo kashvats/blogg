@@ -141,18 +141,19 @@ MEDIA_ROOT=os.path.join(BASE_DIR,'media/')
 
 
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-# EMAIL_BACKEND='django.core.mail.backends.console.EmailBackend'
-EMAIL_HOST='smtp.gmail.com'
-EMAIL_PORT= 587
-EMAIL_HOST_USER= 'enteryourgmail@gmail.com'
-EMAIL_HOST_PASSWORD= '00000000'
-EMAIL_USE_TLS=True
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 587
+EMAIL_HOST_USER = 'testm9478@gmail.com'
+EMAIL_HOST_PASSWORD = 'akash@123'
+EMAIL_USE_TLS = True
 # EMAIL_TIMEOUT= 500
+
 
 CRISPY_TEMPLATE_PACK ='bootstrap4'
 
 WHITENOISE_USE_FINDERS = True
-# STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+
+
 import django_heroku
 django_heroku.settings(locals())
 

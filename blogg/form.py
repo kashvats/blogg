@@ -2,6 +2,7 @@ from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
 from django import forms
 from .models import post, comment, contactus
+from django.core.exceptions import ValidationError
 
 
 class register(UserCreationForm):
@@ -10,6 +11,13 @@ class register(UserCreationForm):
     class Meta:
         model = User
         fields = ['first_name', 'last_name', 'username', 'email']
+
+        def validate_even(value):
+            # name = self.c
+                raise ValidationError(
+                    _('%(value)s is not an even number'),
+                    params={'value': value},
+                )
 
 
 class blog_post(forms.ModelForm):
