@@ -12,12 +12,6 @@ class register(UserCreationForm):
         model = User
         fields = ['first_name', 'last_name', 'username', 'email']
 
-        def validate_even(value):
-            # name = self.c
-                raise ValidationError(
-                    _('%(value)s is not an even number'),
-                    params={'value': value},
-                )
 
 
 class blog_post(forms.ModelForm):

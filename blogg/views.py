@@ -4,6 +4,7 @@ from .form import register, blog_post, contact, cmnt
 from .models import post, comment, contactus
 import os
 from django.views.generic import ListView
+from django.conf import settings
 from django.contrib import messages
 import random
 from django.core.mail import EmailMessage, send_mail
@@ -181,12 +182,14 @@ def contra(request):
     if request.method == 'POST':
         ak = contact(request.POST)
         if ak.is_valid():
+            lame= request.user
             name = ak.cleaned_data.get('name')
             email = ak.cleaned_data.get('email')
             message = ak.cleaned_data.get('message')
             kam = contactus(name=name, email=email, message=message)
             subject = 'welcome to flogger help'
-            pk = send_mail(subject, message, email, ['testm9478@gmail.com'])
+            kutta = (subject,lame,email)
+            pk = send_mail(kutta, message, email, [settings.EMAIL_HOST_USER])
             kam.save()
             return redirect('/post')
 
