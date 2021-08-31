@@ -10,7 +10,7 @@
   </div>
 </div></div>
 {% endblock %}
-{% block content2 %}<div class="container my-2 py-5">
+{% block content2 %}<div class="container my-2">
 {% if user.is_authenticated %}
 <br><br><form action=""  method="POST">{% csrf_token %}
 {% for p in pk %}
