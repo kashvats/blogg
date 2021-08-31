@@ -25,7 +25,7 @@ SECRET_KEY = '4hlzw9)y)lk!(2!b!)sj*ro(s(sv99y8p*m0&ukk39d(q#$cv0'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['127.0.0.1']
+ALLOWED_HOSTS = ['127.0.0.1','hogblog.herokuapp.com']
 
 # # import django_heroku
 # django_heroku.settings(locals())
