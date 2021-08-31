@@ -18,7 +18,6 @@ urlpatterns = [
     path ('change_password', views.pass_change, name='password_change'),
     path('about_us',views.about,name='about_us'),
     path('contact_us',views.contra,name='contact_us'),
-    path('post/<int:id>/comment',views.com,name='comment'),
     path('password_reset/', auth_views.PasswordResetView.as_view(template_name='user/reset_password.html'),name='password_reset'),
     path('password_reset/done/', auth_views.PasswordResetDoneView.as_view(template_name='user/password_reset_sent.html'), name='password_reset_done'),
     path('reset/<uidb64>/<token>/', auth_views.PasswordResetConfirmView.as_view(template_name="user/password_reset_confirm.html"), name='password_reset_confirm'),

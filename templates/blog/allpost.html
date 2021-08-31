@@ -1,19 +1,22 @@
 {% extends 'base.html' %}{% block content1 %}
-{% for a in po %}
-<img src=" {{ a.image }}" height="250" width="300">
-{% endfor %}
+
+<div class="container-fluid  py-5 my-5 col-8">
 {% for a in ap %}
-<div class="container my-4 mx-4 col-12">
-<div class="card">
-  <div class="card-header">
+    <div class="card mb-3" style="max-width: 100%;">
+  <div class="row g-0">
+    <div class="col-md-4">
+      <img src="{{a.Image.url}}" class="img-fluid rounded-start" alt="...">
+    </div>
+    <div class="col-md-8">
+      <div class="card-body text-center">
+          <h5 class="card-title"><a class="text-secondary text-decoration-none" href="{% url 'show' a.id %}">{{a.heading}}</a></h5>
+        <p class="card-text">{{a.content|truncatechars:200}}<a class="text-secondary text-decoration-none" href="{% url 'show' a.id %}">..............view more</a></p>
+        <a href="{% url 'ghost' a.author %}" class="card-text text-secondary text-decoration-none">{{a.author}}<small class="text-muted">at {{a.date}}</small></a>
+      </div>
+    </div>
   </div>
-  <div class="card-body text-center">
-      <!--<img src=" {{ a.image.url }}" height="250" width="300">-->
-      <h5 class="card-title"><a href="{% url 'show' a.id %}">{{a.heading}}</a></h5>
-    <p class="card-text">{{a.content|truncatechars:250}}<a class="btn btn-outline-success" href="{% url 'show' a.id %}">..............view more</a></p>
-  <hr><h6>written by
-      <a class="btn btn-outline-success" href="{% url 'ghost' a.author %}">{{a.author}}{{a.first_name}}</a></h6>
-    <p>at {{a.date}}</p></div>
-</div></div></div>
+</div>
 {% endfor %}
+    </div>
+
 {% endblock %}

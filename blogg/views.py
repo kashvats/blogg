@@ -23,7 +23,7 @@ def user_register(request):
             ak.save()
             return HttpResponseRedirect('/login')
         else:
-            messages.error(request, 'Invalid credenitals please fill this form carefully')
+            messages.error(request, 'Invalid credenitals please fill this form carefully or this username already exist.')
             return HttpResponseRedirect('/register')
     else:
         ak = register()
@@ -177,23 +177,6 @@ def about(request):
     return render(request, 'blog/aboutus.html')
 
 
-def com(request, id):
-    if request.method == 'POST':
-        ak = cmnt(request.POST)
-        if ak.is_valid():
-            name = ak.cleaned_data.get('txt')
-            user = request.user
-            postt = id
-            aks = comment(post_comment=postt, user_comment=user, txt=name)
-            aks.save()
-            HttpResponseRedirect('post/<int:id>')
-        else:
-            return HttpResponseRedirect('<p>{{error}}</p>')
-    else:
-        ak = cmnt()
-        return render(request, 'blog/comment.html', {'pk': ak})
-
-
 def contra(request):
     if request.method == 'POST':
         ak = contact(request.POST)
@@ -203,7 +186,7 @@ def contra(request):
             message = ak.cleaned_data.get('message')
             kam = contactus(name=name, email=email, message=message)
             subject = 'welcome to flogger help'
-            pk = EmailMessage(subject, message, [email], ['kamuuraa@gmail.com'])
+            pk = send_mail(subject, message, email, ['testm9478@gmail.com'])
             kam.save()
             return redirect('/post')
 
