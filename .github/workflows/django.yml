@@ -34,5 +34,5 @@ jobs:
       run: |
           git config user.name "akashvats29"
           git config user.email "<vatsakash168@gmail.com>"
-          git checkout main
+          git checkout master
           git merge --no-ff ${{ github.sha }} -m "Merge pull request #${{ github.event.pull_request.number }}"
