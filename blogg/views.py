@@ -13,7 +13,7 @@ from django.contrib.auth.forms import AuthenticationForm, PasswordChangeForm, Se
 from django.contrib.auth import login, logout, authenticate
 from django.contrib.auth.decorators import login_required
 
-#test
+#this is blah blah blah blah
 # Create your views here.
 
 # user registration form
