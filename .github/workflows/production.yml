@@ -2,9 +2,9 @@ name: Django CI
 
 on:
   push:
-    branches: [ "akash-master" ]
+    branches: [ "akash-master" ,"feature"]
   pull_request:
-    branches: [ "akash-master" ]
+    branches: [ "akash-master","feature" ]
 
 jobs:
   build:
