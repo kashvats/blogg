@@ -14,6 +14,7 @@ from django.contrib.auth import login, logout, authenticate
 from django.contrib.auth.decorators import login_required
 
 # user registration form
+#test
 
 
 def user_register(request):
