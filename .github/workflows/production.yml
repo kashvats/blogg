@@ -30,5 +30,5 @@ jobs:
           git config user.name "akashvats29"
           git config user.email "vatsakash168@gmail.com"
           git checkout master
-          git merge --no-ff ${{ github.sha }} -m "Merge branch 'feature' into main"
+          git merge --no-ff ${{ github.sha }} -m "Merge branch 'akash-master' into master"
           git push origin master
