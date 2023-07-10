@@ -15,8 +15,10 @@ jobs:
 
       - name: Merge branches
         run: |
-          git config user.name "akashvats29"
+          git config user.name "aakash"
           git config user.email "vatsakash168@gmail.com"
+          git branch
+          git config user.name
           git checkout akash-master
           git merge --no-ff ${{ github.sha }} -m "Merge branch 'main' into akash-master"
           git push origin akash-master
