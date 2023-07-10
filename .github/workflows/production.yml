@@ -1,38 +1,26 @@
-name: Django CI
+name: Automatic Branch Merge
 
 on:
   push:
     branches:
-      - akash-master
-
-  pull_request:
-    branches: 
-      - "akash-master"
+      - main
 
 jobs:
-  build:
-
+  merge-branches:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v2
+      - name: Checkout repository
+        uses: actions/checkout@v2
 
-      - name: Set up Python
-        uses: actions/setup-python@v2
-        with:
-          python-version: 3.9
-
-      # - name: Install Dependencies
-      #   run: pip install -r requirements.txt
-
-      # - name: Run Tests
-      #   run: python manage.py test
-
-      - name: Merge to main branch
-        if: github.ref == 'refs/heads/akash-master' && github.event_name == 'push'
+      - name: Merge branches
         run: |
           git config user.name "akashvats29"
           git config user.email "vatsakash168@gmail.com"
-          git checkout main
-          git merge --no-ff ${{ github.sha }} -m "Merge branch 'akash-master' into main"
-          git push origin main
+          git checkout akash-master
+          git merge --no-ff ${{ github.sha }} -m "Merge branch 'main' into akash-master"
+          git push origin akash-master
+
+          
+
+

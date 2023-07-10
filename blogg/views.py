@@ -16,7 +16,6 @@ from django.contrib.auth.decorators import login_required
 # user registration form
 
 
-
 def user_register(request):
     if request.method == 'POST':
         ak = register(request.POST)
