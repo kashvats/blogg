@@ -3,7 +3,7 @@ name: Automatic Branch Merge
 on:
   push:
     branches:
-      - akash-master
+      - akash
 
 jobs:
   merge-branches:
@@ -20,7 +20,7 @@ jobs:
           git fetch origin
           git checkout master
           # git merge --allow-unrelated-histories akash-master
-          git merge --no-ff ${{ github.sha }} -m "Merge branch 'akash-master' into 'master'"
+          git merge --no-ff ${{ github.sha }} -m "Merge branch 'akash' into 'master'"
           git push origin master
 
           
