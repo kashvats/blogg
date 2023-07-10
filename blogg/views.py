@@ -14,7 +14,7 @@ from django.contrib.auth import login, logout, authenticate
 from django.contrib.auth.decorators import login_required
 
 # user registration form
-#automerge code from akash-master to masterrrrrrr
+#automerge code from akash-master to master
 
 
 def user_register(request):
