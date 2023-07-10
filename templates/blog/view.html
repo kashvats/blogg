@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+{% block content1 %}
+    <div class="container rounded-4 my-3 text-center">
+<div class="card" >
+  <div class="card-body"><br><br>
+    <h2 class="card-title">{{a.heading}}</h2>
+    <h6 class="card-subtitle mb-2 text-muted">written by {{a.author}} at {{a.date}}</h6><br><br>
+    <img src="{{a.Image.url}}" class="rounded-lg">
+      <p class="card-text">{{a.content|linebreaks}}</p>
+  </div>
+</div></div>
+{% endblock %}
+{% block content2 %}<div class="container my-2 py-5">
+{% if user.is_authenticated %}
+<br><br><form action=""  method="POST">{% csrf_token %}
+{% for p in pk %}
+    {{p}}
+    {% endfor %}
+<button type="submit">comment</button>
+</form>
+    {% endif %}
+{% for a in kl %}{% load static %}
+<div class="container py-3">
+<div class="card rounded-3 my-2">
+  <div class="card-header"><div class="row">
+<div class="col-1" >
+    <img src="{% static 'image/default .jpg' %}" height="70" width="70" class="rounded-circle">
+</div>
+      <div class="col-2">
+      <b>{{a.user_comment}}</b><br> <sup class="fw-lighter">at {{a.comment_time}}</sup></div>
+      <div class="col-5">
+    <p class="card-text fs-5">{{a.txt}}</p></div>
+  </div></div>
+</div></div></div>
+{% endfor %}
+{% endblock %}

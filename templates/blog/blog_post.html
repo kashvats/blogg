@@ -1,0 +1,16 @@
+{% extends 'base.html' %}{% block content2 %}
+{% for a in use %}
+<div class="card">
+  <div class="card-header">
+  </div>
+  <div class="card-body">
+      <h5 class="card-title"><a href="{% url 'show' a.id %}">{{a.heading}}</a></h5>
+    <p class="card-text">{{a.content|truncatechars:200}}<a class="btn" href="{% url 'show' a.id %}">..............view more</a></p>
+
+    <h6>written by
+      <a class="btn" href="{% url 'ghost' a.author %}">{{a.author}}{{a.first_name}}</a></h6>
+    <p>at {{a.date}}</p>
+  </div>
+</div>
+{% endfor %}
+{% endblock %}

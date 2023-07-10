@@ -1,0 +1,17 @@
+{% extends 'base.html' %}{% block content %}
+<div class="position-absolute top-50 start-50 translate-middle text-center">
+<div class="card" style="width: 18rem;">{% load static %}
+     <img src="{% static 'image/default .jpg' %}" height="200" width="250" class="rounded-circle mx-3">
+  <div class="card-body">
+    <h5 class="card-title ">Username: {{ap.username}}</h5>
+
+    <h6 class="card-subtitle mb-2 text-muted ">First name: {{ap.first_name}}</h6>
+      <h6 class="card-subtitle mb-2 text-muted">Last name: {{ap.last_name}}</h6>
+    <!--<h6 class="card-subtitle mb-2 text-muted">DOB: {{ap.birth}}</h6>-->
+          <h6 class="card-subtitle mb-2 text-muted">Email: {{ap.email}}</h6>
+    <a href="{% url 'password_change' %}" class="card-link">change password</a>
+    <a href="{% url 'home' %}" class="card-link">home</a>
+  </div>
+</div>
+</div>
+{% endblock %}

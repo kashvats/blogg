@@ -1,0 +1,22 @@
+{% extends 'base.html' %}{% block content1 %}
+
+<div class="container-fluid  py-5 my-5 col-8">
+{% for a in ap %}
+    <div class="card mb-3" style="max-width: 100%;">
+  <div class="row g-0">
+    <div class="col-md-4">
+      <img src="{{a.Image.url}}" class="img-fluid rounded-start" alt="...">
+    </div>
+    <div class="col-md-8">
+      <div class="card-body text-center">
+          <h5 class="card-title"><a class="text-secondary text-decoration-none" href="{% url 'show' a.id %}">{{a.heading}}</a></h5>
+        <p class="card-text">{{a.content|truncatechars:200}}<a class="text-secondary text-decoration-none" href="{% url 'show' a.id %}">..............view more</a></p>
+        <a href="{% url 'ghost' a.author %}" class="card-text text-secondary text-decoration-none">{{a.author}}<small class="text-muted">at {{a.date}}</small></a>
+      </div>
+    </div>
+  </div>
+</div>
+{% endfor %}
+    </div>
+
+{% endblock %}
