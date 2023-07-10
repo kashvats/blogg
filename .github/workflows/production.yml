@@ -3,7 +3,7 @@ name: Automatic Branch Merge
 on:
   push:
     branches:
-      - akash
+      - akash2
 
 jobs:
   merge-branches:
@@ -18,10 +18,10 @@ jobs:
           git config user.name "aakash"
           git config user.email "vatsakash168@gmail.com"
           git fetch origin
-          git checkout master
+          git checkout akash1
           # git merge --allow-unrelated-histories akash-master
-          git merge --no-ff ${{ github.sha }} -m "Merge branch 'akash' into 'master'"
-          git push origin master
+          git merge --no-ff ${{ github.sha }} -m "Merge branch 'akash2' into 'akash1'"
+          git push origin akash1
 
           
 
