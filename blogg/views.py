@@ -13,8 +13,7 @@ from django.contrib.auth.forms import AuthenticationForm, PasswordChangeForm, Se
 from django.contrib.auth import login, logout, authenticate
 from django.contrib.auth.decorators import login_required
 
-# user registration form
-#automerge code from akash-master to master
+# user registration 
 
 
 def user_register(request):
