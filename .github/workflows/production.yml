@@ -4,7 +4,6 @@ on:
   push:
     branches:
       - main
-      - akash-master
 
 jobs:
   merge-branches:
@@ -22,10 +21,10 @@ jobs:
           git config user.name
           git fetch origin
           git branch
-          git checkout origin/akash-master
+          git checkout feature
           git branch
-          git merge --no-ff ${{ github.sha }} -m "Merge branch 'main' into akash-master"
-          git push origin akash-master
+          git merge --no-ff ${{ github.sha }} -m "Merge branch 'main' into feature"
+          git push origin feature
 
           
 
