@@ -24,8 +24,8 @@ jobs:
       - name: Run Tests
         run: python manage.py test
 
-      - name: Merge to main branch
-        if: github.ref == 'refs/heads/feature' && github.event_name == 'push'
+      - name: Merge to master branch
+        if: github.ref == 'refs/heads/akash-master' && github.event_name == 'push'
         run: |
           git config user.name "akashvats29"
           git config user.email "vatsakash168@gmail.com"
