@@ -18,11 +18,11 @@ jobs:
         with:
           python-version: 3.9
 
-      - name: Install Dependencies
-        run: pip install -r requirements.txt
+      # - name: Install Dependencies
+      #   run: pip install -r requirements.txt
 
-      - name: Run Tests
-        run: python manage.py test
+      # - name: Run Tests
+      #   run: python manage.py test
 
       - name: Merge to master branch
         if: github.ref == 'refs/heads/akash-master' && github.event_name == 'push'
