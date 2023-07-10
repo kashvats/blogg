@@ -23,6 +23,7 @@ jobs:
           git branch
           git checkout feature
           git branch
+          git merge --allow-unrelated-histories feature
           git merge --no-ff ${{ github.sha }} -m "Merge branch 'main' into feature"
           git push origin feature
 
