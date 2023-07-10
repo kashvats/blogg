@@ -14,7 +14,8 @@ from django.contrib.auth import login, logout, authenticate
 from django.contrib.auth.decorators import login_required
 
 # user registration form
-#testinggg ci cd automerge
+#testinggg ci cd automerge code into master
+
 
 def user_register(request):
     if request.method == 'POST':
