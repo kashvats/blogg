@@ -20,6 +20,7 @@ jobs:
           git fetch origin
           git checkout akash1
           git merge --allow-unrelated-histories akash2
+          git merge --no-edit akash2
           # git merge --no-ff ${{ github.sha }} -m "Merge branch 'akash2' into 'akash1'"
           git push origin akash1
 
